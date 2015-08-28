@@ -20,11 +20,12 @@
 
 .navigation-links { 
   float: right;
-  li {
+} 
+li {
   display: inline-block;
   margin: 0 16px;
   }
-}
+  
 
 /* MISC */
 
