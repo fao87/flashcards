@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   root 'home#index'
   resources :cards
+<<<<<<< HEAD
   get "cards" => "cards#index"
+=======
+>>>>>>> 868f6b08842706c058f4ab71dbc2eb1d03af651f
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

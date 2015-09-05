@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <html>
 
   <h1>Список карточек</h1>
@@ -16,3 +17,21 @@
     <% end %>
   </table>
 </html>
+=======
+<h1>Список карточек</h1>
+<table>
+  <tr>
+    <th>Оригинал</th>
+    <th>Перевод</th>
+    <th>Дата</th>
+  </tr>
+ 
+  <% @cards.each do |card| %>
+    <tr>
+      <td><%= card.original_text %></td>
+      <td><%= card.translated_text %></td>
+      <td><%= card.review_date.strftime("%d/%m/%Y")%></td>
+    </tr>
+  <% end %>
+</table>
+>>>>>>> 868f6b08842706c058f4ab71dbc2eb1d03af651f
