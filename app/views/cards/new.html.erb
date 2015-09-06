@@ -3,6 +3,6 @@
  <%= form_for @card, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
   <%= f.text_field :original_text %>
   <%= f.text_field :translated_text %>
-  <%= f.text_field :review_date %>
+  <%= f.date_field :review_date %>
   <%= f.submit "Create" %>
 <% end %>
