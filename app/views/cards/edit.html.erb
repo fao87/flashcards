@@ -1,6 +1,6 @@
 <h1>Редактирование карточки</h1>
  
-<%= form_for :card, url: card_path(@card), method: :patch do |f| %>
+<%= simple_form_for :card, url: card_path(@card), method: :patch do |f| %>
  
   <% if @card.errors.any? %>
     <div id="error_explanation">
