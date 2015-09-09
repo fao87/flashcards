@@ -1,8 +1,8 @@
 class Card < ActiveRecord::Base
   validates :original_text, :translated_text, :review_date, presence: true
-  validate :not_equal
+  validate :original_and_translate_not_the_same
  
-  def not_equal
+  def original_and_translate_not_the_same
     if original_text.mb_chars.downcase == translated_text.mb_chars.downcase
       errors.add(:original_text, 'совпадение недопустимо')
     end
