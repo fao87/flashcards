@@ -1,11 +1,10 @@
 class CardsController < ApplicationController
   def index
-	@cards = Card.all
+    @cards = Card.all
   end
 
   def show
     @card = Card.find(params[:id])
-    @card.review_date.next_day(3)
   end
     
   def new
@@ -13,9 +12,9 @@ class CardsController < ApplicationController
   end
 
   def create
-    @card = Card.new(card_params)
-	@card.save
-	redirect_to @card
+    @card = Card.create(card_params)
+	  @card.save
+	  redirect_to @card
   end
 
   def edit
@@ -35,11 +34,6 @@ class CardsController < ApplicationController
     @card = Card.find(params[:id])
     @card.destroy
     redirect_to cards_path
-  end
-
-  private
-
-  def find_card
   end
 
   def card_params
