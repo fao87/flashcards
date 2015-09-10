@@ -1,12 +1,11 @@
 class CardsController < ApplicationController
-  before_action :change_card, only: [:update]
+  before_action :find_params, only: [:update, :show, :edit, :destroy]
 
   def index
     @cards = Card.all
   end
 
-  def show
-    @card = Card.find(params[:id])
+  def show  
   end
     
   def new
@@ -20,29 +19,28 @@ class CardsController < ApplicationController
   end
 
   def edit
-    @card = Card.find(params[:id])
   end
   
 
   def update
-    @card = Card.find(params[:id])
     if @card.update(card_params)
-        redirect_to @card
-      else
-        render 'edit'
-      end
+      redirect_to @card
+    else
+      ender 'edit'
+    end
   end
 
   def destroy
-    @card = Card.find(params[:id])
     @card.destroy
     redirect_to cards_path
   end
 
+  
+
   private
 
-    def change_card 
-      
+    def find_params
+      @card = Card.find(params[:id])   
     end
 
     def card_params
