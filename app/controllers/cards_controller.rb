@@ -20,12 +20,11 @@ class CardsController < ApplicationController
   def edit
   end
   
-
   def update
     if @card.update(card_params)
       redirect_to @card
     else
-      ender 'edit'
+      render 'edit'
     end
   end
 
@@ -33,8 +32,6 @@ class CardsController < ApplicationController
     @card.destroy
     redirect_to cards_path
   end
-
-  
 
   private
 
