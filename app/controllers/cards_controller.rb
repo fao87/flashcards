@@ -27,6 +27,7 @@ class CardsController < ApplicationController
       render 'edit'
     end
   end
+  
 
   def destroy
     @card.destroy
