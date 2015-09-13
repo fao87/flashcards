@@ -5,12 +5,27 @@
     <th>Перевод</th>
     <th>Дата</th>
   </tr>
+<<<<<<< HEAD
+  
+=======
+>>>>>>> master
  
   <% @cards.each do |card| %>
     <tr>
       <td><%= card.original_text %></td>
       <td><%= card.translated_text %></td>
       <td><%= card.review_date.strftime("%d/%m/%Y")%></td>
+<<<<<<< HEAD
+      <td><%= link_to 'Просмотреть', card_path(card) %></td>
+      <td><%= link_to 'Редактировать', edit_card_path(card) %></td>
+      <td><%= link_to 'Удалить', card_path(card), method: :delete,data: {
+        confirm: 'Вы уверены?' } %></td>
     </tr>
   <% end %>
 </table>
+
+=======
+    </tr>
+  <% end %>
+</table>
+>>>>>>> master
