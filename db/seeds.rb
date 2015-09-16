@@ -8,6 +8,6 @@ page = Nokogiri::HTML(open(source))
 page.css(".tableblue tr").each do |tr|
   original_text = tr.css("td:first-child").text
   translated_text = tr.css("td:last-child").text
-  Card.create(original_text: original_text, translated_text: translated_text, review_date: Time.now) 
+  Card.create(original_text: original_text, translated_text: translated_text) 
 end
 
