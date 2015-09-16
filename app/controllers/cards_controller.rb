@@ -1,5 +1,4 @@
 class CardsController < ApplicationController
-<<<<<<< HEAD
   before_action :find_card, only: [:update, :show, :edit, :destroy]
 
   def index
@@ -29,7 +28,6 @@ class CardsController < ApplicationController
     end
   end
   
-
   def destroy
     @card.destroy
     redirect_to cards_path
