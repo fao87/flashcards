@@ -1,0 +1,2 @@
+class CheckCardsController < ApplicationController
+end
