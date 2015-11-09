@@ -1,9 +1,9 @@
 class ReviewsController < ApplicationController
   def new
   	if params[:card_id]
-       @card = Card.find(params[:card_id])
+      @card = Card.find(params[:card_id])
     else
-       @card = Card.expired.random
+      @card = Card.expired.random
     end
   end
 
@@ -23,7 +23,5 @@ class ReviewsController < ApplicationController
   def review_params
     params.require(:review).permit(:card_id, :original_text)
   end
-
-   
-  
+    
 end

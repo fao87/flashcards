@@ -1,12 +1,11 @@
 <h3>Карточка № <%= @card.id %></h3>
-
 <%= simple_form_for :review, url: reviews_path do |f| %>
-    <%= f.error :base %>
-    <%= f.hidden_field :card_id, value: card.id %>
-    <%= f.input :translated_text, as: :string,  label: 'Фраза на английском: ',
-      disabled: true, input_html: {value: card.translated_text}%>
-    <%= text_field_tag :text, nil, placeholder: "Введите перевод" %>
-    <div>
+  <%= f.error :base %>
+  <%= f.hidden_field :card_id, value: card.id %>
+  <%= f.input :translated_text, as: :string,  label: 'Фраза на английском: ',
+    disabled: true, input_html: {value: card.translated_text}%>
+  <%= text_field_tag :text, nil, placeholder: "Введите перевод" %>
+  <div>
     <%= f.button :submit, 'Проверить' ,id: 'review_button' %>
-    </div>
+  </div>
 <% end %>

@@ -6,7 +6,6 @@
       <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
       <%= csrf_meta_tags %>
   </head>
-  
   <header class="clearfix">
     <h1>Флэшкарточкер</h1>
     <ul class="navigation-links">
@@ -16,7 +15,9 @@
   </header>
   <section id="content">
     <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <div class="alert alert-<%= message_type %>">
+        <%= message %>
+      </div>
     <% end %>
   </section>
   <body>
