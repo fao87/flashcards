@@ -18,7 +18,7 @@ class Card < ActiveRecord::Base
 
   def check_translation(text)
     if original_text.mb_chars.downcase == text.mb_chars.downcase
-      self.review_date =  Date.today + 3.days
+      update_attributes(review_date: Date.today + 3)
     else
       false
     end
