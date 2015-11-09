@@ -5,7 +5,7 @@ class Card < ActiveRecord::Base
 
   scope :expired, -> { where("review_date <= ?", Date.today) }
   scope :random, -> { order("RANDOM()").take }
-  
+
   def original_and_translate_not_the_same
     if original_text.mb_chars.downcase == translated_text.mb_chars.downcase
       errors.add(:original_text, 'совпадение недопустимо')
@@ -17,8 +17,12 @@ class Card < ActiveRecord::Base
   end
 
   def check_translation(text)
-    if translated_text.mb_chars.downcase == text.mb_chars.downcase
-      update_attributes(review_date: Date.today + 3.days)
+    if original_text.mb_chars.downcase == text.mb_chars.downcase
+      self.review_date =  Date.today + 3.days
+    else
+      false
     end
-  end
+
+  end   
+  
 end
