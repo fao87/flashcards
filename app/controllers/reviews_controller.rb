@@ -1,9 +1,9 @@
 class ReviewsController < ApplicationController
   def new
-  	if params[:card_id]
-      @card = Card.find(params[:card_id])
+    @card = if params[:card_id]
+      Card.find(params[:card_id])
     else
-      @card = Card.expired.random
+      Card.expired.random
     end
   end
 
