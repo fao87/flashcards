@@ -2,7 +2,7 @@ require 'rails_helper'
 require 'spec_helper'
 
 describe Card do
-   it "should be invalid" do 
+  it "should be invalid" do 
     card = Card.new(original_text: "mail")
     expect(card.check_translation("почтовый ящик")).to be false
   end
@@ -18,7 +18,8 @@ describe Card do
   end
 
   it 'should set review_date + 3' do
-    card = Card.create
+    card = Card.new
+    card.save
     expect(card.review_date).to eq Date.today + 3
   end
 
