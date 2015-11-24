@@ -7,7 +7,7 @@ class Card < ActiveRecord::Base
   scope :random, -> { order("RANDOM()").take }
 
   def original_and_translate_not_the_same
-    if original_text.mb_chars.downcase == translated_text.mb_chars.downcase
+    if original_text.to_s.mb_chars.downcase == translated_text.to_s.mb_chars.downcase
       errors.add(:original_text, 'совпадение недопустимо')
     end
   end
